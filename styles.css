@@ -4,26 +4,23 @@ html{
 
 
 .hvac{ 	
-	width: 0px;
+	width: 245px;
 	color: black;
 }
 
 a.regen{
-	z-index: 50;
+	z-index: 999;
 	position: relative;
+	cursor: pointer;
 	top: 0px;
 	left: 100px;
 	background: red;
-        border: 5px solid white;
-        border-right-width: 40px;
+        border: 2px solid white;
+        border-right-width: 20px;
         padding: 0 10px;
         border-radius: 5px;
         text-decoration: none;
         transition: all .5s ease;
-}
-
-a.regen:hover {
-	cursor: pointer;
 }
 
 a.regen.off {

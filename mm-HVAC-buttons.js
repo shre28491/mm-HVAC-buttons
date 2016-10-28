@@ -9,9 +9,6 @@ Module.register("mm-HVAC-buttons",{
     defaults:{
         fadeDuration: 2000
     },
-    getScripts: function(){
-        return ["jquery.js" , "jquery-ui.min.js"];
-    },
     getStyles: function(){
         return ["styles.css"];
     },
@@ -23,35 +20,33 @@ Module.register("mm-HVAC-buttons",{
     //Overide DOM generator
     getDom: function() {
         var wrapper = document.createElement("div");
-        var buttonElement = document.createElement("BUTTON");
+        //var buttonElement = document.createElement("BUTTON");
         var HVACwrapper = document.createElement("div");
-        var ventselSlider = document.createElement("div");
-        var blspeedDial = document.createElement("div");
+        //var ventselSlider = document.createElement("div");
+        //var blspeedDial = document.createElement("div");
         var regenToggle = document.createElement("a");
-        var regenDial = document.createElement("div");
+        //var regenDial = document.createElement("div");
         
 	wrapper.className = "wrap";      
         HVACwrapper.className = "hvac";
-	ventselSlider.className = "ventsel";
-        blspeedDial.className = "blspeed";
+	//ventselSlider.className = "ventsel";
+        //blspeedDial.className = "blspeed";
         regenToggle.className = "regen";
-        
+         
                 
         wrapper.appendChild(HVACwrapper);
-        HVACwrapper.appendChild(ventselSlider);
-        HVACwrapper.appendChild(blspeedDial);
+        //HVACwrapper.appendChild(ventselSlider);
+        //HVACwrapper.appendChild(blspeedDial);
         HVACwrapper.appendChild(regenToggle);
-        HVACwrapper.appendChild(regenDial);
+        //HVACwrapper.appendChild(regenDial);
 	
         
         var fadeDuration = this.config.fadeDuration;
-        $(document).ready(function(){
-                $("a").click(function(){
-			debugger;
-	    		Log.info('mouse-click-event');
-            		$(this).toggleClass('off');
-        	});
-	});
+        
+	regenToggle.addEventListener('click', function() {
+    	    Log.info('mouse-click-event');
+    	    regenToggle.classList.toggle("off");
+        });
         return wrapper;
     }
 });
